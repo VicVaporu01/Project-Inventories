@@ -1,15 +1,29 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Frontend-Inventories
+Frontend-Inventories/dist
+Frontend-Inventories/tmp
+Frontend-Inventories/out-tsc
+Frontend-Inventories/bazel-out
+Frontend-Inventories/node_modules
+Frontend-Inventories/npm-debug.log
+Frontend-Inventories/yarn-error.log
 
-# Node
-node_modules
-npm-debug.log
-yarn-error.log
+# Angular cache
+Frontend-Inventories/.angular/cache
+Frontend-Inventories/.sass-cache
+
+# Miscellaneous
+Frontend-Inventories/connect.lock
+Frontend-Inventories/coverage
+Frontend-Inventories/libpeerconnection.log
+Frontend-Inventories/testem.log
+Frontend-Inventories/typings
+
+# Backend (Inventarios)
+Inventarios/target
+Inventarios/.mvn/wrapper/maven-wrapper.jar
+Inventarios/HELP.md
 
 # IDEs and editors
 .idea/
@@ -21,40 +35,24 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
-
 # System files
 .DS_Store
 Thumbs.db
 
-# Spring Boot
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+Inventarios/.apt_generated
+Inventarios/.classpath
+Inventarios/.factorypath
+Inventarios/.project
+Inventarios/.settings
+Inventarios/.springBeans
+Inventarios/.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
@@ -63,11 +61,11 @@ target/
 *.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+Inventarios/nbproject/private
+Inventarios/nbbuild
+Inventarios/dist
+Inventarios/nbdist
+Inventarios/.nb-gradle
+Inventarios/build
+!Inventarios/**/src/main/**/build
+!Inventarios/**/src/test/**/build
