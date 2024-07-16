@@ -1,0 +1,2 @@
+use inventory_db;
+
