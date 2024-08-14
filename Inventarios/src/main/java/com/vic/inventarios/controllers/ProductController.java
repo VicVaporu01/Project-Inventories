@@ -9,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("inventory-app")
@@ -25,7 +27,7 @@ public class ProductController {
         try {
             List<Product> products = productService.ListProducts();
 
-            logger.info("Productos obtenidos: ");
+            logger.info("Products gotten: ");
             products.forEach((product -> logger.info(product.toString())));
 
             return ResponseEntity.status(HttpStatus.OK).body(products);
@@ -34,12 +36,14 @@ public class ProductController {
         }
     }
 
-    @PostMapping("/create-product")
-    public ResponseEntity<String> CreateProduct(@RequestBody Product product) {
+    @PostMapping("/products")
+    public ResponseEntity<Map<String, String>> CreateProduct(@RequestBody Product product) {
         try {
             String response = productService.SaveProduct(product);
+            Map<String, String> responseBody = new HashMap<>();
+            responseBody.put("message", response);
 
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
+            return ResponseEntity.status(HttpStatus.CREATED).body(responseBody);
         } catch (Exception error) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
