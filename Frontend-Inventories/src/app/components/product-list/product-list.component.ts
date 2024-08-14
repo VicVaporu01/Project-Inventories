@@ -20,7 +20,7 @@ export class ProductListComponent {
   }
 
   private GetProducts() {
-    this.productService.GetProductsList().subscribe({
+    this.productService.productsList().subscribe({
         next: (products: Product[]) => {
           this.products = products;
         },

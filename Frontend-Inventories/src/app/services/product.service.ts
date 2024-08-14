@@ -12,12 +12,12 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {
   }
 
-  GetProductsList(): Observable<Product[]> {
+  productsList(): Observable<Product[]> {
     return this.httpClient.get<Product[]>(`${environment.urlBase}/products`);
   }
 
-  AddNewProduct(product: Product): Observable<Product> {
-    return this.httpClient.post<Product>(`${environment.urlBase}/create-product`, product);
+  newProduct(product: Product): Observable<Product> {
+    return this.httpClient.post<Product>(`${environment.urlBase}/products`, product);
   }
 
 }
